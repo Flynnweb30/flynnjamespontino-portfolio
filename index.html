@@ -1,0 +1,877 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flynn James Q. Pontino — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Page setup ── */
+    @page {
+      size: A4;
+      margin: 16mm 18mm;
+    }
+
+    :root {
+      --accent:   #1A5C5C;
+      --dark:     #111111;
+      --body:     #333333;
+      --muted:    #777777;
+      --light:    #AAAAAA;
+      --rule:     #E0E0E0;
+      --pill-bg:  #F0F5F5;
+    }
+
+    html, body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 10pt;
+      line-height: 1.5;
+      color: var(--body);
+      background: #FFFFFF;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ── Document wrapper ── */
+    /* On-screen: looks like an A4 page with shadow */
+    .doc {
+      max-width: 794px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      min-height: 1123px; /* A4 height in px at 96dpi */
+      padding: 32px 36px 40px;
+    }
+    @media screen {
+      body { background: #EBEBEB; padding: 24px 0 48px; }
+      .doc {
+        box-shadow: 0 2px 24px rgba(0,0,0,.18);
+        border-radius: 2px;
+      }
+    }
+    @media print {
+      body { background: #FFF; padding: 0; }
+      .doc { box-shadow: none; padding: 0; max-width: none; min-height: unset; }
+    }
+
+    /* ── Print toolbar (screen only, hidden in print) ── */
+    .print-bar {
+      max-width: 794px;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 4px;
+    }
+    .print-bar-note {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #666;
+    }
+    .print-bar-note strong { color: #333; }
+    .print-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 18px;
+      background: var(--accent);
+      color: #FFF;
+      border: none;
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .print-btn:hover { background: #124444; }
+    .print-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+    @media print { .print-bar { display: none; } }
+
+    /* ─────────────────────────────────
+       HEADER
+    ───────────────────────────────── */
+    .header {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 20px;
+      padding-bottom: 18px;
+      border-bottom: 2px solid var(--accent);
+    }
+    .header-photo {
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 2px solid var(--rule);
+    }
+    .header-avatar {
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      background: var(--pill-bg);
+      border: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .header-info { flex: 1; }
+    .header-name {
+      font-size: 22pt;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.1;
+      margin-bottom: 3px;
+      letter-spacing: -0.3px;
+    }
+    .header-title {
+      font-size: 10pt;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .header-bio {
+      font-size: 9.5pt;
+      line-height: 1.6;
+      color: var(--body);
+      max-width: 560px;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    /* ─────────────────────────────────
+       BODY LAYOUT: left column + main
+    ───────────────────────────────── */
+    .body-wrap {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    /* ─────────────────────────────────
+       LEFT COLUMN
+    ───────────────────────────────── */
+    .col-left {}
+
+    /* Section label */
+    .sec-label {
+      font-size: 7.5pt;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* Skills */
+    .skill-item { margin-bottom: 9px; }
+    .skill-name-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+    .skill-name {
+      font-size: 8.5pt;
+      color: var(--dark);
+      font-weight: 500;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      flex: 1;
+      padding-right: 6px;
+    }
+    .skill-lvl {
+      font-size: 7pt;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .skill-bar {
+      height: 2px;
+      background: var(--rule);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .skill-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+    .left-gap { height: 20px; }
+
+    /* ─────────────────────────────────
+       MAIN COLUMN
+    ───────────────────────────────── */
+    .col-main {}
+
+    /* Section */
+    .section { margin-bottom: 20px; }
+    .section:last-child { margin-bottom: 0; }
+
+    /* Experience entries */
+    .exp-item {
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .exp-item:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+    .exp-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 1px;
+    }
+    .exp-role {
+      font-size: 10pt;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    .exp-period {
+      font-size: 8pt;
+      color: var(--muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .exp-company {
+      font-size: 8.5pt;
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+    .exp-desc {
+      font-size: 8.5pt;
+      line-height: 1.6;
+      color: var(--body);
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    /* Works */
+    .works-list {}
+    .work-item {
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .work-item:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+    .work-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 1px;
+    }
+    .work-title {
+      font-size: 10pt;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    .work-cat {
+      font-size: 7.5pt;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .work-desc {
+      font-size: 8.5pt;
+      line-height: 1.6;
+      color: var(--body);
+      overflow-wrap: break-word;
+      word-break: break-word;
+      margin-bottom: 4px;
+    }
+ 
+    .work-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 4px;
+    }
+    .work-link {
+      font-size: 8pt;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      padding: 2px 8px;
+      white-space: nowrap;
+    }
+    .work-link:hover { text-decoration: underline; }
+
+    /* ─────────────────────────────────
+       FOOTER
+    ───────────────────────────────── */
+    .doc-footer {
+      margin-top: 24px;
+      padding-top: 10px;
+      border-top: 1px solid var(--rule);
+      font-size: 7.5pt;
+      color: var(--light);
+      text-align: center;
+    }
+    .doc-footer a { color: var(--accent); text-decoration: none; }
+
+    /* ─────────────────────────────────
+       PRINT PAGE BREAKS
+    ───────────────────────────────── */
+    @media print {
+      .exp-item  { page-break-inside: avoid; }
+      .work-item { page-break-inside: avoid; }
+      .section   { page-break-inside: avoid; }
+      .col-left  { page-break-inside: avoid; }
+      .header    { page-break-inside: avoid; }
+    }
+
+    /* ── Responsive adjustments for screen devices ── */
+    @media screen and (max-width: 768px) {
+      body { padding: 16px 8px; }
+      .print-bar {
+        padding: 0 4px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        text-align: center;
+      }
+      .print-btn { justify-content: center; }
+      .doc { padding: 24px 20px 32px; min-height: auto; }
+      .body-wrap { grid-template-columns: 1fr; gap: 20px; }
+      .col-left { width: 100%; }
+    }
+
+    @media screen and (max-width: 520px) {
+      .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 14px;
+      }
+      .header-photo, .header-avatar {
+        margin: 0 auto;
+      }
+      .exp-top, .work-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* ── Theme override ── */
+    :root {
+      --accent: #F4A261;
+      --dark: #E8EDF2;
+      --body: #AABBCC;
+      --muted: #8899AA;
+      --rule: #1B2E42;
+      --pill-bg: #142236;
+    }
+    html, body { background: #0A1520 !important; }
+    .doc { background: #0D1B2A !important; }
+    .col-left { background: #142236; padding: 20px 16px; border-radius: 3px; }
+    .header { border-bottom-color: #F4A261; }
+    .header-name { font-family: "Syne", sans-serif; color: #E8EDF2; }
+    .header-title { color: #F4A261; }
+    .header-bio { color: #AABBCC; }
+    .exp-role { color: #E8EDF2; }
+    .exp-company { color: #F4A261; }
+    .work-title { color: #E8EDF2; }
+    .doc-footer { border-top-color: #1B2E42; color: #8899AA; }
+    .doc-footer a { color: #F4A261; }
+    @media print {
+      html, body, .doc {
+        background: #0D1B2A !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Print toolbar (screen only) -->
+<div class="print-bar">
+  <span class="print-bar-note">
+    <strong>Save as PDF:</strong> Click the button → in the print dialog, set Destination to "Save as PDF"
+  </span>
+  <button class="print-btn" onclick="window.print()">
+    <svg viewBox="0 0 16 16" fill="none">
+      <path d="M4 1h6l4 4v10H4V1z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9.5 1v4H14M8 7v5M5.5 9.5L8 12l2.5-2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Save as PDF
+  </button>
+</div>
+
+<div class="doc">
+
+  <!-- ── HEADER ── -->
+  <header class="header">
+    <img class="header-photo" src="https://drive.google.com/thumbnail?id=1K6OEFY27IfeUhmsL2gMWMrsEKHdmOkB1&amp;sz=w800" alt="Flynn James Q. Pontino">
+    <div class="header-info">
+      <div class="header-name">Flynn James Q. Pontino</div>
+      <div class="header-title">S E N I O R S D R | B 2 B O U T B O U N D S A L E S | T E L E M A R K E T I N G &amp; L E A D G E N E R AT I O N</div>
+      <p class="header-bio">Results-driven Senior SDR with 11+ years in B2B outbound sales, generating $1.8M+ in qualified pipeline and consistently exceeding quota at 120–150%. Skilled in high-volume phone prospecting, objection handling, and BANT/MEDDIC qualification, delivering 30+ discovery meetings monthly across US, UK, AU, and SG markets. Proven mentor who coaches junior reps and drives consistent outbound pipeline growth.</p>
+    </div>
+  </header>
+
+  <!-- ── BODY ── -->
+  <div class="body-wrap">
+
+    <!-- Left column: Skills -->
+    <div class="col-left">
+      <div class="sec-label">Skills</div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">B2B Lead Generation</span>
+          <span class="skill-lvl">Expert</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:100%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">Cold Calling (150/day)</span>
+          <span class="skill-lvl">Expert</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:100%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">Outbound Prospecting</span>
+          <span class="skill-lvl">Expert</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:100%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">BANT/MEDDIC Qualification</span>
+          <span class="skill-lvl">Advanced</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">Appointment Setting</span>
+          <span class="skill-lvl">Expert</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:100%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">Pipeline Management</span>
+          <span class="skill-lvl">Advanced</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">Objection Handling</span>
+          <span class="skill-lvl">Advanced</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">Multi-Channel Outreach</span>
+          <span class="skill-lvl">Advanced</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">Consultative Selling</span>
+          <span class="skill-lvl">Advanced</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">Sales Forecasting</span>
+          <span class="skill-lvl">Advanced</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">Team Leadership</span>
+          <span class="skill-lvl">Intermediate</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:50%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">CRM Data Management</span>
+          <span class="skill-lvl">Advanced</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">HubSpot CRM</span>
+          <span class="skill-lvl">Advanced</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">Salesforce</span>
+          <span class="skill-lvl">Advanced</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">Pipedrive</span>
+          <span class="skill-lvl">Advanced</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">LinkedIn Sales Nav</span>
+          <span class="skill-lvl">Advanced</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">Zoominfo</span>
+          <span class="skill-lvl">Advanced</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">Lusha</span>
+          <span class="skill-lvl">Advanced</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">Apollo.io</span>
+          <span class="skill-lvl">Advanced</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">Google Workspace</span>
+          <span class="skill-lvl">Advanced</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">Close</span>
+          <span class="skill-lvl">Advanced</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">MS Excel</span>
+          <span class="skill-lvl">Advanced</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">Zoom</span>
+          <span class="skill-lvl">Advanced</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">Calendly</span>
+          <span class="skill-lvl">Advanced</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name-row">
+          <span class="skill-name">Trello</span>
+          <span class="skill-lvl">Advanced</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:75%"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Main column -->
+    <div class="col-main">
+
+      <div class="section">
+        <div class="sec-label">Work Experience</div>
+        <div class="exp-item">
+          <div class="exp-top">
+            <div class="exp-role">SALES COACH | SENIOR SALES DEVELOPMENT REPRESENTATIVE | COLD CALLER</div>
+            <div class="exp-period">May 2026 – Oct 2026</div>
+          </div>
+          <div class="exp-company">Regen Digital - US (Remote)</div>
+          <div class="exp-desc">▪ Coach junior SDRs on cold call openers, objection handling, BANT qualification, and script discipline.<br />
+▪ Monitor daily dial metrics and develop rep outbound stamina through live call coaching and structured shadowing.<br />
+▪ Deliver daily outbound dial sprints, leading by example with personal cold call volume and consistent meeting booking.<br />
+▪ Fostered a collaborative floor culture that lifted team outbound KPIs by 15%+ month-over-month.<br />
+▪ Generated verified B2B sales discovery opportunities through high-volume cold calling and multi-touch outbound cadences.<br />
+▪ Engaged business owners and executives, qualified accounts via BANT, and booked high-intent discovery calls for Account Executives.<br />
+▪ Reached Level 4 (highest company performance tier) within 3 weeks, surpassing dial, connect, and meeting KPIs.<br />
+▪ Maintained 100% CRM data accuracy, ensuring seamless AE handoffs and accurate pipeline attribution.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-top">
+            <div class="exp-role">SENIOR SALES DEVELOPMENT REPRESENTATIVE</div>
+            <div class="exp-period">Nov 2025 – Apr 2026</div>
+          </div>
+          <div class="exp-company">Seek Marketing Partners - UK (Remote)</div>
+          <div class="exp-desc">▪ Exceeded monthly quota by 120% through 150+ daily cold outbound dials, booking 30+ qualified discovery meetings per month.<br />
+▪ Sourced over $1.8M in qualified outbound pipeline for Account Executives across US, UK, and Canadian markets.<br />
+▪ Lifted prospect response rates by 18% through pattern-interrupt openers and tactical objection-handling frameworks.<br />
+▪ Orchestrated full outbound prospecting workflows in HubSpot from list building to confirmed calendar invites.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-top">
+            <div class="exp-role">SENIOR SALES DEVELOPMENT REPRESENTATIVE</div>
+            <div class="exp-period">Feb 2025 – Nov 2025</div>
+          </div>
+          <div class="exp-company">Averps Pte Ltd - SG (Remote)</div>
+          <div class="exp-desc">▪ Achieved 100% SQL targets with a 22% demo conversion rate from cold outbound sequences and timely follow-ups.<br />
+▪ Built multi-channel email and LinkedIn sequences that contributed $1.2M in qualified pipeline for senior reps.<br />
+▪ Pioneered structured qualification criteria that improved opportunity qualification rates by 15%.<br />
+▪ Collaborated with marketing to refine ICP personas and execute account-based outbound prospecting.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-top">
+            <div class="exp-role">DELEGATE SALES ACQUISITION REPRESENTATIVE</div>
+            <div class="exp-period">Nov 2022 – Jan 2025</div>
+          </div>
+          <div class="exp-company">Public Sector Network - US, CA &amp; AU (Remote)</div>
+          <div class="exp-desc">▪ Exceeded outbound acquisition targets by 15% YoY with a 20% conversion rate from cold outreach to confirmed attendees.<br />
+▪ Utilized LinkedIn Sales Navigator for targeted executive prospecting, generating a 28% higher connection-to-meeting rate.<br />
+▪ Piloted personalized email workflows that lifted email open rates by 22% and reply rates by 12%.<br />
+▪ Delivered weekly outbound analytics and pipeline health reports to executive leadership.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-top">
+            <div class="exp-role">TELEMARKETING | SENIOR SDR | TEAM MENTOR</div>
+            <div class="exp-period">Mar 2015 – Jan 2022</div>
+          </div>
+          <div class="exp-company">Pacific Outsource Teleservices - BPO PH</div>
+          <div class="exp-desc">▪ Generated 100+ qualified leads/week and 30–40+ confirmed discovery appointments/month across 30+ client campaigns.<br />
+▪ Maintained 120–150% outbound quota attainment over 7 consecutive years in rigorous telemarketing environments.<br />
+▪ Mentored 5 junior SDRs, shortening onboarding ramp by 25% and increasing team productivity by 20%.<br />
+▪ Expanded campaigns into US, UK, AU, and SG accounts with structured call cadences and qualification rigor.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-top">
+            <div class="exp-role">SALES | CUSTOMER SERVICE SPECIALIST</div>
+            <div class="exp-period">Sep 2014 – Sep 2015</div>
+          </div>
+          <div class="exp-company">Global Empire Corporation - BPO PH</div>
+          <div class="exp-desc">▪ Achieved 150% of outbound quota within the first 6 months, twice awarded Employee of the Month.<br />
+▪ Cross-trained 8 new SDR hires on cold call discovery, tone control, and active listening.<br />
+▪ Delivered 95%+ quality scores on prospect qualification and call compliance audits.</div>
+        </div>
+      </div>
+      
+      <div class="section">
+        <div class="sec-label">Portfolio Samples</div>
+        <div class="works-list">
+          <div class="work-item">
+            <div class="work-top">
+              <div class="work-title">B2B Cold Calling &amp; Lead Generation</div>
+              <div class="work-cat">Sales Development / Cold Calling</div>
+            </div>
+            <div class="work-desc">Executed high-volume B2B outbound campaigns targeting decision-makers across the US, UK, Canada, Australia, and Singapore. Used consultative opening statements, objection handling, and personalized prospecting to generate qualified conversations and sales opportunities. Leveraged Apollo, LinkedIn Sales Navigator, ZoomInfo, and CRM tools to manage leads and maintain consistent outreach. Achieved 150+ outbound dials per day, 120% quota attainment, and contributed to $1.8M+ in qualified pipeline.</div>
+            <div class="work-links">
+              <a class="work-link" href="https://drive.google.com/thumbnail?id=1I8lVyT2EEcNfsUltt-2QaS8hBFYKPCsU&amp;sz=w800" target="_blank" rel="noopener">
+                Image 1 ↗
+              </a>
+              <a class="work-link" href="https://drive.google.com/thumbnail?id=1xCgsOkv8KLtkeFIPRQin5FTtTv2HqlXN&amp;sz=w800" target="_blank" rel="noopener">
+                Image 2 ↗
+              </a>
+              <a class="work-link" href="https://drive.google.com/thumbnail?id=1H3fG-VwoHYAWzfMEHWYyrRucSWPOopO8&amp;sz=w800" target="_blank" rel="noopener">
+                Image 3 ↗
+              </a>
+              <a class="work-link" href="https://flynnjames.onrender.com/service-cold-calling" target="_blank" rel="noopener">View project ↗</a>
+            </div>
+          </div>
+
+          <div class="work-item">
+            <div class="work-top">
+              <div class="work-title">Qualified Appointment Setting</div>
+              <div class="work-cat">Lead Generation / Appointment Setting</div>
+            </div>
+            <div class="work-desc">Managed outbound prospecting and appointment-setting campaigns for B2B services, connecting with business owners and key decision-makers to identify needs and schedule qualified discovery meetings. Applied lead qualification, objection handling, and structured call-to-action techniques to improve booking quality. Generated 30+ qualified discovery meetings per month, with results varying by campaign, market, and lead quality.</div>
+            <div class="work-links">
+              <a class="work-link" href="https://drive.google.com/thumbnail?id=19IpXF_qxr2CnRnLGO0doxk7fw_Uhpaq_&amp;sz=w800" target="_blank" rel="noopener">
+                Image 1 ↗
+              </a>
+              <a class="work-link" href="https://drive.google.com/thumbnail?id=1OnG9-W5SrdkG5mEZDF6YXdRr_WMXJ5pu&amp;sz=w800" target="_blank" rel="noopener">
+                Image 2 ↗
+              </a>
+              <a class="work-link" href="https://drive.google.com/thumbnail?id=1KHWG16kV5RpKxUo4v9BjC0XkDUVXQoBG&amp;sz=w800" target="_blank" rel="noopener">
+                Image 3 ↗
+              </a>
+              <a class="work-link" href="https://flynnjames.onrender.com/service-lead-qualification" target="_blank" rel="noopener">View project ↗</a>
+            </div>
+          </div>
+
+          <div class="work-item">
+            <div class="work-top">
+              <div class="work-title">B2B Cold-Calling Script &amp; Objection Handling</div>
+              <div class="work-cat">Sales Scripts / Sales Enablement</div>
+            </div>
+            <div class="work-desc">Developed and applied conversational cold-calling frameworks designed to capture attention, build rapport, qualify prospects, and secure discovery meetings. Used concise introductions, relevant value propositions, open-ended questions, and professional responses to common objections such as “not interested,” “send me an email,” and “we already have a provider.” Focused on natural conversations rather than pushy sales tactics, with the goal of improving engagement and appointment quality.</div>
+            <div class="work-links">
+              <a class="work-link" href="https://drive.google.com/thumbnail?id=1qtPtxt0S432NTinoNz_--jWHy0_i6tA7&amp;sz=w800" target="_blank" rel="noopener">
+                Image 1 ↗
+              </a>
+              <a class="work-link" href="https://drive.google.com/thumbnail?id=1-UxwWbObr0ZADVvhrQO3La9T796uRza0&amp;sz=w800" target="_blank" rel="noopener">
+                Image 2 ↗
+              </a>
+              <a class="work-link" href="https://drive.google.com/thumbnail?id=18N4vHhOoTW2SSsEFQLtE6S6Iqme0Hwr-&amp;sz=w800" target="_blank" rel="noopener">
+                Image 3 ↗
+              </a>
+              <a class="work-link" href="https://flynnjames.onrender.com/service-cold-calling" target="_blank" rel="noopener">View project ↗</a>
+            </div>
+          </div>
+
+          <div class="work-item">
+            <div class="work-top">
+              <div class="work-title">SDR Coaching &amp; Performance Improvement</div>
+              <div class="work-cat">Sales Leadership / Team Training</div>
+            </div>
+            <div class="work-desc">Supported SDR development through call shadowing, practical coaching, objection-handling guidance, daily dialing sprints, KPI monitoring, and performance feedback. Helped representatives strengthen their opening statements, qualification techniques, and consistency in outbound execution. Contributed to a reported 15% improvement in team KPIs through structured coaching and performance-focused sales routines.</div>
+            <div class="work-links">
+              <a class="work-link" href="https://drive.google.com/thumbnail?id=1rYfrKpSU7cjmM4TWDLZbgngfY2kC7_sk&amp;sz=w800" target="_blank" rel="noopener">
+                View image ↗
+              </a>
+              <a class="work-link" href="https://flynnjames.onrender.com/service-sdr-coaching" target="_blank" rel="noopener">View project ↗</a>
+            </div>
+          </div>
+
+          <div class="work-item">
+            <div class="work-top">
+              <div class="work-title">Sales Call Recordings &amp; Communication Samples</div>
+              <div class="work-cat">Audio Portfolio / Sales Communication</div>
+            </div>
+            <div class="work-desc">Showcase of recorded sales conversations demonstrating my communication style, professional rapport-building, call structure, objection handling, and ability to guide prospects toward a clear next step. These audio samples highlight a conversational, consultative approach to outbound sales and appointment setting, with an emphasis on engaging prospects and qualifying business opportunities.</div>
+            <div class="work-links">
+              <a class="work-link" href="https://drive.google.com/thumbnail?id=1tpkX5NBphWw7RbH_Ol7LA_Xo-ST5eMDr&amp;sz=w800" target="_blank" rel="noopener">
+                View image ↗
+              </a>
+              <a class="work-link" href="https://flynnjames.onrender.com/calls" target="_blank" rel="noopener">View project ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div><!-- /.col-main -->
+  </div><!-- /.body-wrap -->
+
+  <footer class="doc-footer">
+    To work with Flynn James Q. Pontino, visit
+    <a href="https://flynnjames.onrender.com" target="_blank" rel="noopener">
+      flynnjames.onrender.com
+    </a>.
+  </footer>
+
+</div><!-- /.doc -->
+
+<script>
+  window.addEventListener('load', function () {
+    // Wait for images to load before triggering print
+    const imgs = document.querySelectorAll('img');
+    let loaded = 0;
+    const total = imgs.length;
+    function tryPrint() {
+      loaded++;
+      if (loaded >= total || total === 0) {
+        setTimeout(function () { window.print(); }, 600);
+      }
+    }
+    if (total === 0) {
+      setTimeout(function () { window.print(); }, 600);
+    } else {
+      imgs.forEach(img => {
+        if (img.complete) { tryPrint(); }
+        else { img.addEventListener('load', tryPrint); img.addEventListener('error', tryPrint); }
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
