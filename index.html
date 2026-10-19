@@ -1,13 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flynn James Q. Pontino — Portfolio</title>
+  <title>Flynn James Q. Pontino Resume | Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     /* ── Reset ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -340,68 +339,18 @@
       .col-left  { page-break-inside: avoid; }
       .header    { page-break-inside: avoid; }
     }
-
-    /* ── Responsive adjustments for screen devices ── */
-    @media screen and (max-width: 768px) {
-      body { padding: 16px 8px; }
-      .print-bar {
-        padding: 0 4px;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
-        text-align: center;
-      }
-      .print-btn { justify-content: center; }
-      .doc { padding: 24px 20px 32px; min-height: auto; }
-      .body-wrap { grid-template-columns: 1fr; gap: 20px; }
-      .col-left { width: 100%; }
-    }
-
-    @media screen and (max-width: 520px) {
-      .header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 14px;
-      }
-      .header-photo, .header-avatar {
-        margin: 0 auto;
-      }
-      .exp-top, .work-top {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
     /* ── Theme override ── */
-    :root {
-      --accent: #F4A261;
-      --dark: #E8EDF2;
-      --body: #AABBCC;
-      --muted: #8899AA;
-      --rule: #1B2E42;
-      --pill-bg: #142236;
-    }
-    html, body { background: #0A1520 !important; }
-    .doc { background: #0D1B2A !important; }
-    .col-left { background: #142236; padding: 20px 16px; border-radius: 3px; }
-    .header { border-bottom-color: #F4A261; }
-    .header-name { font-family: "Syne", sans-serif; color: #E8EDF2; }
-    .header-title { color: #F4A261; }
-    .header-bio { color: #AABBCC; }
-    .exp-role { color: #E8EDF2; }
-    .exp-company { color: #F4A261; }
-    .work-title { color: #E8EDF2; }
-    .doc-footer { border-top-color: #1B2E42; color: #8899AA; }
-    .doc-footer a { color: #F4A261; }
-    @media print {
-      html, body, .doc {
-        background: #0D1B2A !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-    }
-  </style>
+    
+      :root{--accent:#3D6F6F;--dark:#1A1A1A;--body:#444440;--muted:#888880;--rule:#DDD9D2;--pill-bg:#EDE9E1;}
+      html,body{background:#E0DBD2 !important;}
+      .doc{background:#FAF9F6 !important;}
+      .col-left{background:#EDE9E1;padding:20px 16px;border-radius:3px;}
+      .header{border-bottom-color:#3D6F6F;}
+      .header-title{color:#3D6F6F;}
+      .sec-label{color:#3D6F6F;border-bottom-color:#DDD9D2;}
+      .doc-footer a{color:#3D6F6F;}
+      @media print{html,body{background:#FAF9F6 !important;}}
+      </style>
 </head>
 <body>
 
@@ -423,429 +372,430 @@
 
   <!-- ── HEADER ── -->
   <header class="header">
-    <img class="header-photo" src="https://drive.google.com/thumbnail?id=1K6OEFY27IfeUhmsL2gMWMrsEKHdmOkB1&amp;sz=w800" alt="Flynn James Q. Pontino">
-    <div class="header-info">
+          <img class="header-photo" src="https://drive.google.com/thumbnail?id=1K6OEFY27IfeUhmsL2gMWMrsEKHdmOkB1&amp;sz=w800" alt="Flynn James Q. Pontino">
+        <div class="header-info">
       <div class="header-name">Flynn James Q. Pontino</div>
-      <div class="header-title">S E N I O R S D R | B 2 B O U T B O U N D S A L E S | T E L E M A R K E T I N G &amp; L E A D G E N E R AT I O N</div>
-      <p class="header-bio">Results-driven Senior SDR with 11+ years in B2B outbound sales, generating $1.8M+ in qualified pipeline and consistently exceeding quota at 120–150%. Skilled in high-volume phone prospecting, objection handling, and BANT/MEDDIC qualification, delivering 30+ discovery meetings monthly across US, UK, AU, and SG markets. Proven mentor who coaches junior reps and drives consistent outbound pipeline growth.</p>
-    </div>
+      <div class="header-title">SALES  COACH · TEAM LEADER · SENIOR SDR</div>
+              <p class="header-bio">Results-driven B2B sales professional with 11+ years of experience in<br />
+outbound sales, lead generation, and appointment setting. Skilled in team<br />
+leadership, SDR coaching, performance management, CRM optimization,<br />
+and KPI tracking. Experienced in UK-market campaigns, SaaS prospecting,<br />
+and international B2B acquisition. Former Sales Coach at Regen Digital and<br />
+Team Lead at Seek Marketing Partners, focused on improving team<br />
+performance and pipeline growth.</p>
+          </div>
   </header>
 
   <!-- ── BODY ── -->
   <div class="body-wrap">
 
     <!-- Left column: Skills -->
-    <div class="col-left">
+        <div class="col-left">
       <div class="sec-label">Skills</div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">B2B Lead Generation</span>
-          <span class="skill-lvl">Expert</span>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">B2B Lead Generation</span>
+            <span class="skill-lvl">Expert</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:100%"></div>
+          </div>
         </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:100%"></div>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">Cold Calling (150/day)</span>
+            <span class="skill-lvl">Expert</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:100%"></div>
+          </div>
         </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">Cold Calling (150/day)</span>
-          <span class="skill-lvl">Expert</span>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">Outbound Prospecting</span>
+            <span class="skill-lvl">Expert</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:100%"></div>
+          </div>
         </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:100%"></div>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">BANT/MEDDIC Qualification</span>
+            <span class="skill-lvl">Advanced</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:75%"></div>
+          </div>
         </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">Outbound Prospecting</span>
-          <span class="skill-lvl">Expert</span>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">Appointment Setting</span>
+            <span class="skill-lvl">Expert</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:100%"></div>
+          </div>
         </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:100%"></div>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">Pipeline Management</span>
+            <span class="skill-lvl">Expert</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:100%"></div>
+          </div>
         </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">BANT/MEDDIC Qualification</span>
-          <span class="skill-lvl">Advanced</span>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">Objection Handling</span>
+            <span class="skill-lvl">Expert</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:100%"></div>
+          </div>
         </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:75%"></div>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">Multi-Channel Outreach</span>
+            <span class="skill-lvl">Advanced</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:75%"></div>
+          </div>
         </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">Appointment Setting</span>
-          <span class="skill-lvl">Expert</span>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">Consultative Selling</span>
+            <span class="skill-lvl">Advanced</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:75%"></div>
+          </div>
         </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:100%"></div>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">Sales Forecasting</span>
+            <span class="skill-lvl">Advanced</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:75%"></div>
+          </div>
         </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">Pipeline Management</span>
-          <span class="skill-lvl">Advanced</span>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">Team Leadership</span>
+            <span class="skill-lvl">Advanced</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:75%"></div>
+          </div>
         </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:75%"></div>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">CRM Data Management</span>
+            <span class="skill-lvl">Advanced</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:75%"></div>
+          </div>
         </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">Objection Handling</span>
-          <span class="skill-lvl">Advanced</span>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">HubSpot</span>
+            <span class="skill-lvl">Advanced</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:75%"></div>
+          </div>
         </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:75%"></div>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">Salesforce</span>
+            <span class="skill-lvl">Advanced</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:75%"></div>
+          </div>
         </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">Multi-Channel Outreach</span>
-          <span class="skill-lvl">Advanced</span>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">Pipedrive</span>
+            <span class="skill-lvl">Advanced</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:75%"></div>
+          </div>
         </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:75%"></div>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">LinkedIn Sales Nav</span>
+            <span class="skill-lvl">Advanced</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:75%"></div>
+          </div>
         </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">Consultative Selling</span>
-          <span class="skill-lvl">Advanced</span>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">Zoominfo</span>
+            <span class="skill-lvl">Advanced</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:75%"></div>
+          </div>
         </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:75%"></div>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">Lusha</span>
+            <span class="skill-lvl">Advanced</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:75%"></div>
+          </div>
         </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">Sales Forecasting</span>
-          <span class="skill-lvl">Advanced</span>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">Apollo.io</span>
+            <span class="skill-lvl">Advanced</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:75%"></div>
+          </div>
         </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:75%"></div>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">Google Workspace</span>
+            <span class="skill-lvl">Advanced</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:75%"></div>
+          </div>
         </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">Team Leadership</span>
-          <span class="skill-lvl">Intermediate</span>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">MS Excel</span>
+            <span class="skill-lvl">Advanced</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:75%"></div>
+          </div>
         </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:50%"></div>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">Calendly</span>
+            <span class="skill-lvl">Advanced</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:75%"></div>
+          </div>
         </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">CRM Data Management</span>
-          <span class="skill-lvl">Advanced</span>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">Zoom</span>
+            <span class="skill-lvl">Advanced</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:75%"></div>
+          </div>
         </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:75%"></div>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">Discord</span>
+            <span class="skill-lvl">Advanced</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:75%"></div>
+          </div>
         </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">HubSpot CRM</span>
-          <span class="skill-lvl">Advanced</span>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">Slack</span>
+            <span class="skill-lvl">Advanced</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:75%"></div>
+          </div>
         </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:75%"></div>
+              <div class="skill-item">
+          <div class="skill-name-row">
+            <span class="skill-name">Trello</span>
+            <span class="skill-lvl">Advanced</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:75%"></div>
+          </div>
         </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">Salesforce</span>
-          <span class="skill-lvl">Advanced</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:75%"></div>
-        </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">Pipedrive</span>
-          <span class="skill-lvl">Advanced</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:75%"></div>
-        </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">LinkedIn Sales Nav</span>
-          <span class="skill-lvl">Advanced</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:75%"></div>
-        </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">Zoominfo</span>
-          <span class="skill-lvl">Advanced</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:75%"></div>
-        </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">Lusha</span>
-          <span class="skill-lvl">Advanced</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:75%"></div>
-        </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">Apollo.io</span>
-          <span class="skill-lvl">Advanced</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:75%"></div>
-        </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">Google Workspace</span>
-          <span class="skill-lvl">Advanced</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:75%"></div>
-        </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">Close</span>
-          <span class="skill-lvl">Advanced</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:75%"></div>
-        </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">MS Excel</span>
-          <span class="skill-lvl">Advanced</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:75%"></div>
-        </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">Zoom</span>
-          <span class="skill-lvl">Advanced</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:75%"></div>
-        </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">Calendly</span>
-          <span class="skill-lvl">Advanced</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:75%"></div>
-        </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name-row">
-          <span class="skill-name">Trello</span>
-          <span class="skill-lvl">Advanced</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:75%"></div>
-        </div>
-      </div>
-    </div>
+          </div>
     
     <!-- Main column -->
     <div class="col-main">
 
-      <div class="section">
+            <div class="section">
         <div class="sec-label">Work Experience</div>
-        <div class="exp-item">
-          <div class="exp-top">
-            <div class="exp-role">SALES COACH | SENIOR SALES DEVELOPMENT REPRESENTATIVE | COLD CALLER</div>
-            <div class="exp-period">May 2026 – Oct 2026</div>
-          </div>
-          <div class="exp-company">Regen Digital - US (Remote)</div>
-          <div class="exp-desc">▪ Coach junior SDRs on cold call openers, objection handling, BANT qualification, and script discipline.<br />
+                  <div class="exp-item">
+            <div class="exp-top">
+              <div class="exp-role">SALES COACH / Senior SDR</div>
+                              <div class="exp-period">
+                  May 2026 – Oct 2026                </div>
+                          </div>
+                          <div class="exp-company">Regen Digital - US (Remote)</div>
+                                      <div class="exp-desc">▪ Coach junior SDRs on cold call openers, objection handling, BANT qualification, and script discipline.<br />
 ▪ Monitor daily dial metrics and develop rep outbound stamina through live call coaching and structured shadowing.<br />
 ▪ Deliver daily outbound dial sprints, leading by example with personal cold call volume and consistent meeting booking.<br />
-▪ Fostered a collaborative floor culture that lifted team outbound KPIs by 15%+ month-over-month.<br />
+▪ Fostered a collaborative virtual floor culture that lifted team outbound KPIs by 15%+ month-overmonth.<br />
+<br />
+▪ Achieved 150% of outbound quota within six months, earned Employee of the Month twice, and set the benchmark for team performance.<br />
 ▪ Generated verified B2B sales discovery opportunities through high-volume cold calling and multi-touch outbound cadences.<br />
-▪ Engaged business owners and executives, qualified accounts via BANT, and booked high-intent discovery calls for Account Executives.<br />
+▪ Engaged business owners and executives, qualified accounts via BANT, and booked highintent discovery calls for Account Executives.<br />
 ▪ Reached Level 4 (highest company performance tier) within 3 weeks, surpassing dial, connect, and meeting KPIs.<br />
 ▪ Maintained 100% CRM data accuracy, ensuring seamless AE handoffs and accurate pipeline attribution.</div>
-        </div>
-
-        <div class="exp-item">
-          <div class="exp-top">
-            <div class="exp-role">SENIOR SALES DEVELOPMENT REPRESENTATIVE</div>
-            <div class="exp-period">Nov 2025 – Apr 2026</div>
-          </div>
-          <div class="exp-company">Seek Marketing Partners - UK (Remote)</div>
-          <div class="exp-desc">▪ Exceeded monthly quota by 120% through 150+ daily cold outbound dials, booking 30+ qualified discovery meetings per month.<br />
+                      </div>
+                  <div class="exp-item">
+            <div class="exp-top">
+              <div class="exp-role">SENIOR SALES DEVELOPMENT REPRESENTATIVE</div>
+                              <div class="exp-period">
+                  Nov 2025 – Apr 2026                </div>
+                          </div>
+                          <div class="exp-company">Seek Marketing Partners - UK (Remote)</div>
+                                      <div class="exp-desc">▪ Exceeded monthly quota by 120% through 150+ daily cold outbound dials, booking 30+ qualified discovery meetings per month.<br />
 ▪ Sourced over $1.8M in qualified outbound pipeline for Account Executives across US, UK, and Canadian markets.<br />
 ▪ Lifted prospect response rates by 18% through pattern-interrupt openers and tactical objection-handling frameworks.<br />
 ▪ Orchestrated full outbound prospecting workflows in HubSpot from list building to confirmed calendar invites.</div>
-        </div>
-
-        <div class="exp-item">
-          <div class="exp-top">
-            <div class="exp-role">SENIOR SALES DEVELOPMENT REPRESENTATIVE</div>
-            <div class="exp-period">Feb 2025 – Nov 2025</div>
-          </div>
-          <div class="exp-company">Averps Pte Ltd - SG (Remote)</div>
-          <div class="exp-desc">▪ Achieved 100% SQL targets with a 22% demo conversion rate from cold outbound sequences and timely follow-ups.<br />
+                      </div>
+                  <div class="exp-item">
+            <div class="exp-top">
+              <div class="exp-role">SENIOR SALES DEVELOPMENT REPRESENTATIVE</div>
+                              <div class="exp-period">
+                  Feb 2025 – Nov 2025                </div>
+                          </div>
+                          <div class="exp-company">Averps Pte Ltd - SG (Remote)</div>
+                                      <div class="exp-desc">▪ Achieved 100% SQL targets with a 22% demo conversion rate from cold outbound sequences and timely follow-ups.<br />
 ▪ Built multi-channel email and LinkedIn sequences that contributed $1.2M in qualified pipeline for senior reps.<br />
 ▪ Pioneered structured qualification criteria that improved opportunity qualification rates by 15%.<br />
 ▪ Collaborated with marketing to refine ICP personas and execute account-based outbound prospecting.</div>
-        </div>
-
-        <div class="exp-item">
-          <div class="exp-top">
-            <div class="exp-role">DELEGATE SALES ACQUISITION REPRESENTATIVE</div>
-            <div class="exp-period">Nov 2022 – Jan 2025</div>
-          </div>
-          <div class="exp-company">Public Sector Network - US, CA &amp; AU (Remote)</div>
-          <div class="exp-desc">▪ Exceeded outbound acquisition targets by 15% YoY with a 20% conversion rate from cold outreach to confirmed attendees.<br />
+                      </div>
+                  <div class="exp-item">
+            <div class="exp-top">
+              <div class="exp-role">DELEGATE SALES ACQUISITION REPRESENTATIVE</div>
+                              <div class="exp-period">
+                  Nov 2022 – Jan 2025                </div>
+                          </div>
+                          <div class="exp-company">Public Sector Network - US, CA &amp; AU (Remote)</div>
+                                      <div class="exp-desc">▪ Exceeded outbound acquisition targets by 15% YoY with a 20% conversion rate from cold outreach to confirmed attendees.<br />
 ▪ Utilized LinkedIn Sales Navigator for targeted executive prospecting, generating a 28% higher connection-to-meeting rate.<br />
 ▪ Piloted personalized email workflows that lifted email open rates by 22% and reply rates by 12%.<br />
 ▪ Delivered weekly outbound analytics and pipeline health reports to executive leadership.</div>
-        </div>
-
-        <div class="exp-item">
-          <div class="exp-top">
-            <div class="exp-role">TELEMARKETING | SENIOR SDR | TEAM MENTOR</div>
-            <div class="exp-period">Mar 2015 – Jan 2022</div>
-          </div>
-          <div class="exp-company">Pacific Outsource Teleservices - BPO PH</div>
-          <div class="exp-desc">▪ Generated 100+ qualified leads/week and 30–40+ confirmed discovery appointments/month across 30+ client campaigns.<br />
+                      </div>
+                  <div class="exp-item">
+            <div class="exp-top">
+              <div class="exp-role">TELEMARKETING | SENIOR SDR | TEAM MENTOR</div>
+                              <div class="exp-period">
+                  Mar 2015 – Jan 2022                </div>
+                          </div>
+                          <div class="exp-company">Pacific Outsource Teleservices - BPO PH</div>
+                                      <div class="exp-desc">▪ Generated 100+ qualified leads/week and 30–40+ confirmed discovery<br />
+appointments/month across 30+ client campaigns.<br />
 ▪ Maintained 120–150% outbound quota attainment over 7 consecutive years in rigorous telemarketing environments.<br />
-▪ Mentored 5 junior SDRs, shortening onboarding ramp by 25% and increasing team productivity by 20%.<br />
+▪ Mentored 12 junior SDRs, shortening onboarding ramp by 25% and increasing team productivity by 20%.<br />
 ▪ Expanded campaigns into US, UK, AU, and SG accounts with structured call cadences and qualification rigor.</div>
-        </div>
-
-        <div class="exp-item">
-          <div class="exp-top">
-            <div class="exp-role">SALES | CUSTOMER SERVICE SPECIALIST</div>
-            <div class="exp-period">Sep 2014 – Sep 2015</div>
-          </div>
-          <div class="exp-company">Global Empire Corporation - BPO PH</div>
-          <div class="exp-desc">▪ Achieved 150% of outbound quota within the first 6 months, twice awarded Employee of the Month.<br />
+                      </div>
+                  <div class="exp-item">
+            <div class="exp-top">
+              <div class="exp-role">SALES | CUSTOMER SERVICE SPECIALIST</div>
+                              <div class="exp-period">
+                  Sep 2014 – Sep 2015                </div>
+                          </div>
+                          <div class="exp-company">Global Empire Corporation - BPO PH</div>
+                                      <div class="exp-desc">▪ Became one of the top-performing agents in order processing and customer service.<br />
 ▪ Cross-trained 8 new SDR hires on cold call discovery, tone control, and active listening.<br />
 ▪ Delivered 95%+ quality scores on prospect qualification and call compliance audits.</div>
-        </div>
-      </div>
+                      </div>
+              </div>
       
-      <div class="section">
+            <div class="section">
         <div class="sec-label">Portfolio Samples</div>
         <div class="works-list">
-          <div class="work-item">
-            <div class="work-top">
-              <div class="work-title">B2B Cold Calling &amp; Lead Generation</div>
-              <div class="work-cat">Sales Development / Cold Calling</div>
-            </div>
-            <div class="work-desc">Executed high-volume B2B outbound campaigns targeting decision-makers across the US, UK, Canada, Australia, and Singapore. Used consultative opening statements, objection handling, and personalized prospecting to generate qualified conversations and sales opportunities. Leveraged Apollo, LinkedIn Sales Navigator, ZoomInfo, and CRM tools to manage leads and maintain consistent outreach. Achieved 150+ outbound dials per day, 120% quota attainment, and contributed to $1.8M+ in qualified pipeline.</div>
-            <div class="work-links">
-              <a class="work-link" href="https://drive.google.com/thumbnail?id=1I8lVyT2EEcNfsUltt-2QaS8hBFYKPCsU&amp;sz=w800" target="_blank" rel="noopener">
-                Image 1 ↗
-              </a>
-              <a class="work-link" href="https://drive.google.com/thumbnail?id=1xCgsOkv8KLtkeFIPRQin5FTtTv2HqlXN&amp;sz=w800" target="_blank" rel="noopener">
-                Image 2 ↗
-              </a>
-              <a class="work-link" href="https://drive.google.com/thumbnail?id=1H3fG-VwoHYAWzfMEHWYyrRucSWPOopO8&amp;sz=w800" target="_blank" rel="noopener">
-                Image 3 ↗
-              </a>
-              <a class="work-link" href="https://flynnjames.onrender.com/service-cold-calling" target="_blank" rel="noopener">View project ↗</a>
-            </div>
-          </div>
-
-          <div class="work-item">
-            <div class="work-top">
-              <div class="work-title">Qualified Appointment Setting</div>
-              <div class="work-cat">Lead Generation / Appointment Setting</div>
-            </div>
-            <div class="work-desc">Managed outbound prospecting and appointment-setting campaigns for B2B services, connecting with business owners and key decision-makers to identify needs and schedule qualified discovery meetings. Applied lead qualification, objection handling, and structured call-to-action techniques to improve booking quality. Generated 30+ qualified discovery meetings per month, with results varying by campaign, market, and lead quality.</div>
-            <div class="work-links">
-              <a class="work-link" href="https://drive.google.com/thumbnail?id=19IpXF_qxr2CnRnLGO0doxk7fw_Uhpaq_&amp;sz=w800" target="_blank" rel="noopener">
-                Image 1 ↗
-              </a>
-              <a class="work-link" href="https://drive.google.com/thumbnail?id=1OnG9-W5SrdkG5mEZDF6YXdRr_WMXJ5pu&amp;sz=w800" target="_blank" rel="noopener">
-                Image 2 ↗
-              </a>
-              <a class="work-link" href="https://drive.google.com/thumbnail?id=1KHWG16kV5RpKxUo4v9BjC0XkDUVXQoBG&amp;sz=w800" target="_blank" rel="noopener">
-                Image 3 ↗
-              </a>
-              <a class="work-link" href="https://flynnjames.onrender.com/service-lead-qualification" target="_blank" rel="noopener">View project ↗</a>
-            </div>
-          </div>
-
-          <div class="work-item">
-            <div class="work-top">
-              <div class="work-title">B2B Cold-Calling Script &amp; Objection Handling</div>
-              <div class="work-cat">Sales Scripts / Sales Enablement</div>
-            </div>
-            <div class="work-desc">Developed and applied conversational cold-calling frameworks designed to capture attention, build rapport, qualify prospects, and secure discovery meetings. Used concise introductions, relevant value propositions, open-ended questions, and professional responses to common objections such as “not interested,” “send me an email,” and “we already have a provider.” Focused on natural conversations rather than pushy sales tactics, with the goal of improving engagement and appointment quality.</div>
-            <div class="work-links">
-              <a class="work-link" href="https://drive.google.com/thumbnail?id=1qtPtxt0S432NTinoNz_--jWHy0_i6tA7&amp;sz=w800" target="_blank" rel="noopener">
-                Image 1 ↗
-              </a>
-              <a class="work-link" href="https://drive.google.com/thumbnail?id=1-UxwWbObr0ZADVvhrQO3La9T796uRza0&amp;sz=w800" target="_blank" rel="noopener">
-                Image 2 ↗
-              </a>
-              <a class="work-link" href="https://drive.google.com/thumbnail?id=18N4vHhOoTW2SSsEFQLtE6S6Iqme0Hwr-&amp;sz=w800" target="_blank" rel="noopener">
-                Image 3 ↗
-              </a>
-              <a class="work-link" href="https://flynnjames.onrender.com/service-cold-calling" target="_blank" rel="noopener">View project ↗</a>
-            </div>
-          </div>
-
-          <div class="work-item">
-            <div class="work-top">
-              <div class="work-title">SDR Coaching &amp; Performance Improvement</div>
-              <div class="work-cat">Sales Leadership / Team Training</div>
-            </div>
-            <div class="work-desc">Supported SDR development through call shadowing, practical coaching, objection-handling guidance, daily dialing sprints, KPI monitoring, and performance feedback. Helped representatives strengthen their opening statements, qualification techniques, and consistency in outbound execution. Contributed to a reported 15% improvement in team KPIs through structured coaching and performance-focused sales routines.</div>
-            <div class="work-links">
-              <a class="work-link" href="https://drive.google.com/thumbnail?id=1rYfrKpSU7cjmM4TWDLZbgngfY2kC7_sk&amp;sz=w800" target="_blank" rel="noopener">
-                View image ↗
-              </a>
-              <a class="work-link" href="https://flynnjames.onrender.com/service-sdr-coaching" target="_blank" rel="noopener">View project ↗</a>
-            </div>
-          </div>
-
-          <div class="work-item">
-            <div class="work-top">
-              <div class="work-title">Sales Call Recordings &amp; Communication Samples</div>
-              <div class="work-cat">Audio Portfolio / Sales Communication</div>
-            </div>
-            <div class="work-desc">Showcase of recorded sales conversations demonstrating my communication style, professional rapport-building, call structure, objection handling, and ability to guide prospects toward a clear next step. These audio samples highlight a conversational, consultative approach to outbound sales and appointment setting, with an emphasis on engaging prospects and qualifying business opportunities.</div>
-            <div class="work-links">
-              <a class="work-link" href="https://drive.google.com/thumbnail?id=1tpkX5NBphWw7RbH_Ol7LA_Xo-ST5eMDr&amp;sz=w800" target="_blank" rel="noopener">
-                View image ↗
-              </a>
-              <a class="work-link" href="https://flynnjames.onrender.com/calls" target="_blank" rel="noopener">View project ↗</a>
-            </div>
-          </div>
-        </div>
+                      <div class="work-item">
+              
+              <div class="work-top">
+                <div class="work-title">B2B COLD CALLING</div>
+                                  <div class="work-cat">Sales Development / Cold Calling</div>
+                              </div>
+                              <div class="work-desc">Executed high-volume B2B outbound campaigns targeting decision-makers across the US, UK, Canada, Australia, and Singapore. Used consultative opening statements, objection handling, and personalized prospecting to generate qualified conversations and sales opportunities. Leveraged Apollo, LinkedIn Sales Navigator, ZoomInfo, and CRM tools to manage leads and maintain consistent outreach. Achieved 150+ outbound dials per day, 120% quota attainment, and contributed to $1.8M+ in qualified pipeline.</div>
+                                                                        <div class="work-links">
+                                      <a class="work-link" href="https://drive.google.com/thumbnail?id=1fLx-KHjV_Cfy6WxZbymMkcGcodu78x4I&amp;sz=w800" target="_blank" rel="noopener">
+                      View image ↗
+                    </a>
+                                                        <a class="work-link" href="https://flynnjames.onrender.com/service-appointment-setting" target="_blank" rel="noopener">View project ↗</a>
+                                  </div>
+                          </div>
+                      <div class="work-item">
+              
+              <div class="work-top">
+                <div class="work-title">LEAD QUALIFICATIONS &amp; PIPELINE</div>
+                                  <div class="work-cat">Lead Qualification</div>
+                              </div>
+                              <div class="work-desc">Managed outbound prospecting and appointment-setting campaigns for B2B services, connecting with business owners and key decision-makers to identify needs and schedule qualified discovery meetings. Applied lead qualification, objection handling, and structured call-to-action techniques to improve booking quality. Generated 30+ qualified discovery meetings per month, with results varying by campaign, market, and lead quality.</div>
+                                                                        <div class="work-links">
+                                      <a class="work-link" href="https://drive.google.com/thumbnail?id=1ifXNinLu-R3QxYtSlNZudANwGleMouCM&amp;sz=w800" target="_blank" rel="noopener">
+                      View image ↗
+                    </a>
+                                                        <a class="work-link" href="https://flynnjames.onrender.com/service-lead-qualification" target="_blank" rel="noopener">View project ↗</a>
+                                  </div>
+                          </div>
+                      <div class="work-item">
+              
+              <div class="work-top">
+                <div class="work-title">B2B COLD-CALLING SCRIPT &amp; OBJECTION HANDLING</div>
+                                  <div class="work-cat">Sales Scripts / Sales Enablement</div>
+                              </div>
+                              <div class="work-desc">Developed and applied conversational cold-calling frameworks designed to capture attention, build rapport, qualify prospects, and secure discovery meetings. Used concise introductions, relevant value propositions, open-ended questions, and professional responses to common objections such as “not interested,” “send me an email,” and “we already have a provider.” Focused on natural conversations rather than pushy sales tactics, with the goal of improving engagement and appointment quality.</div>
+                                                                        <div class="work-links">
+                                      <a class="work-link" href="https://drive.google.com/thumbnail?id=1bDXwMkzu0F5W8ydHyiasz-N3m3AE-YC2&amp;sz=w800" target="_blank" rel="noopener">
+                      View image ↗
+                    </a>
+                                                        <a class="work-link" href="https://flynnjames.onrender.com/service-cold-calling" target="_blank" rel="noopener">View project ↗</a>
+                                  </div>
+                          </div>
+                      <div class="work-item">
+              
+              <div class="work-top">
+                <div class="work-title">SDR COACHING &amp; PERFORMANCE IMPROVEMENT</div>
+                                  <div class="work-cat">Sales Leadership / Team Training</div>
+                              </div>
+                              <div class="work-desc">Supported SDR development through call shadowing, practical coaching, objection-handling guidance, daily dialing sprints, KPI monitoring, and performance feedback. Helped representatives strengthen their opening statements, qualification techniques, and consistency in outbound execution. Contributed to a reported 15% improvement in team KPIs through structured coaching and performance-focused sales routines.</div>
+                                                                        <div class="work-links">
+                                      <a class="work-link" href="https://drive.google.com/thumbnail?id=1UApNu0mv1p0FHlwVkaD9G2ZxqA2onvxV&amp;sz=w800" target="_blank" rel="noopener">
+                      View image ↗
+                    </a>
+                                                        <a class="work-link" href="https://flynnjames.onrender.com/service-sdr-coaching" target="_blank" rel="noopener">View project ↗</a>
+                                  </div>
+                          </div>
+                      <div class="work-item">
+              
+              <div class="work-top">
+                <div class="work-title">SALES CALL RECORDING &amp; COMMUNICATION SAMPLES</div>
+                                  <div class="work-cat">Audio Portfolio / Sales Communication</div>
+                              </div>
+                              <div class="work-desc">Showcase of recorded sales conversations demonstrating my communication style, professional rapport-building, call structure, objection handling, and ability to guide prospects toward a clear next step. These audio samples highlight a conversational, consultative approach to outbound sales and appointment setting, with an emphasis on engaging prospects and qualifying business opportunities.</div>
+                                                                        <div class="work-links">
+                                      <a class="work-link" href="https://drive.google.com/thumbnail?id=1b9a1abCuTOWLg6-dNiF7InQ3ixlK7v4h&amp;sz=w800" target="_blank" rel="noopener">
+                      View image ↗
+                    </a>
+                                                        <a class="work-link" href="https://flynnjames.onrender.com/calls" target="_blank" rel="noopener">View project ↗</a>
+                                  </div>
+                          </div>
+                  </div>
       </div>
       
     </div><!-- /.col-main -->
   </div><!-- /.body-wrap -->
 
   <footer class="doc-footer">
-    To work with Flynn James Q. Pontino, visit
-    <a href="https://flynnjames.onrender.com" target="_blank" rel="noopener">
-      flynnjames.onrender.com
-    </a>.
+    To work with Flynn James Q. Pontino, contact
+    <a href="https://flynnjames.onrender.com/work-with-me" target="_blank" rel="noopener">
+      Work With Me    </a>.
   </footer>
 
 </div><!-- /.doc -->
